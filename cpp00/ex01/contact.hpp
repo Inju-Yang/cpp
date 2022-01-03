@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 01:16:15 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/03 20:43:59 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/03 20:41:58 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/03 20:45:47 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 # include <string>
 # include <iomanip>
-# include "Contact.hpp"
 
-class Phonebook {
+class Contact {
 	private: 
-		Contact	book[8];
+		std::string firstName;
+		std::string lastName;
+		std::string nickname;
+		std::string phoneNumber;
+		std::string darkestSecret;
 	public:
 		void addContact(int index);
 		void searchContact(int index);

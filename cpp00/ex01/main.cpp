@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 18:33:54 by inyang            #+#    #+#             */
-/*   Updated: 2021/12/15 01:39:24 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/03 20:28:46 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,13 @@ int	main()
 		{
 			std::cout << "\n****** BYE ******" << std::endl;
 			break ;
+		}
+		std::cin.clear();
+		std::cin.ignore(100, '\n');
+		option.clear();
+		if (std::cin.eof())
+		{
+			return (0);
 		}
 	}
 	return 0;
