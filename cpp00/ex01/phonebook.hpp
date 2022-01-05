@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 01:16:15 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/03 20:43:59 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/05 18:12:41 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
-# include "Contact.hpp"
+# include "contact.hpp"
 
 class Phonebook {
 	private: 
-		Contact	book[8];
+		Contact	page[8];
 	public:
-		void addContact(int index);
-		void searchContact(int index);
-		void printContact(int index);
+		void	add(int cnt);
+		void	search(int cnt);
+		void	print(int cnt);
 };
 
 #endif

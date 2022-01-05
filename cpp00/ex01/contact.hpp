@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 20:41:58 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/03 20:45:47 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/04 23:25:46 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class Contact {
 		std::string phoneNumber;
 		std::string darkestSecret;
 	public:
-		void addContact(int index);
-		void searchContact(int index);
-		void printContact(int index);
+		void addContact(void);
+		void searchContact(void);
+		void printContact(void);
 };
 
 #endif
