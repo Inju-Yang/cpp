@@ -1,5 +1,5 @@
 MEGA_NAME		=	megaphone
-CC				=	clang++
+CC				=	c++
 CFLAGS			=	-Wall -Wextra -Werror
 AR				=	ar
 ARFLAGS			=	rcs
