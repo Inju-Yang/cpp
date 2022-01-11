@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/17 00:12:11 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/07 04:22:46 by inyang           ###   ########.fr       */
+/*   Created: 2021/12/15 16:28:48 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/12 04:41:56 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "Karen.hpp"
 
-
-HumanA::HumanA(std::string name, Weapon& club):weapon(club)
+int	main(void)
 {
-	this->name = name;
-}
+	Karen	k;
 
-void	HumanA::attack(void)
-{
-	std::cout << name << " attacks with his " << weapon.getType() << std::endl;
+	k.complain("DEBUG");
+	k.complain("INFO");
+	k.complain("WARNING");
+	k.complain("ERROR");
+	k.complain("STOP");
+
+	return (0);
 }

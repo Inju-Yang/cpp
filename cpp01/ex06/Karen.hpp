@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/17 00:12:11 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/07 04:22:46 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/10 00:57:17 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/12 03:39:19 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
+#include <iostream>
+#include <string>
 
-HumanA::HumanA(std::string name, Weapon& club):weapon(club)
-{
-	this->name = name;
-}
+class Karen {
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	public:
+		void complain(std::string level);
+};
 
-void	HumanA::attack(void)
-{
-	std::cout << name << " attacks with his " << weapon.getType() << std::endl;
-}
+#endif

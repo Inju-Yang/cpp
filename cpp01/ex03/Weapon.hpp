@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:05:48 by inyang            #+#    #+#             */
-/*   Updated: 2021/12/21 00:07:36 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/07 01:15:41 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class Weapon{
 	private:
 		std::string type;
 	public:
-		Weapon(std::string& type);
+		Weapon(std::string type);
 		void				setType(std::string type);
-		const std::string	getType();
+		const std::string	&getType(void);
 };
 
 #endif

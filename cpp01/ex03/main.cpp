@@ -6,11 +6,10 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:28:48 by inyang            #+#    #+#             */
-/*   Updated: 2021/12/17 00:15:15 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/07 02:40:58 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 

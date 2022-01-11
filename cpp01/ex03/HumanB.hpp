@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:05:48 by inyang            #+#    #+#             */
-/*   Updated: 2021/12/17 00:23:35 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/07 02:10:56 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 class HumanB{
 	private:
 		std::string name;
+		Weapon		*club;
 	public:
-		HumanB();
-		HumanB(std::string name, );
+		HumanB(std::string name);
 		void	attack(void);
-		~HumanB();
+		void	setWeapon(Weapon &club);
 };
 
 #endif
