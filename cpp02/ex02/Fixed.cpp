@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:15:47 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/14 04:10:15 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/14 04:18:10 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Fixed::Fixed(const Fixed& beFixed)
 	*this = beFixed;
 }
 
-Fixed& Fixed::operator=(Fixed const &beFixed)
+Fixed& Fixed::operator=(const Fixed& beFixed)
 {
 	setRawBits(beFixed.getRawBits());
 	return (*this);
@@ -66,7 +66,7 @@ std::ostream&	operator<<(std::ostream& out, const Fixed& fixed)
 	return (out);
 }
 
-Fixed	Fixed::operator+(Fixed const &beFixed) const
+Fixed	Fixed::operator+(const Fixed& beFixed) const
 {
 	Fixed	ret = *this;
 	int a = fixValue;
@@ -75,7 +75,7 @@ Fixed	Fixed::operator+(Fixed const &beFixed) const
 	return (ret);
 }
 
-Fixed	Fixed::operator-(Fixed const &beFixed) const
+Fixed	Fixed::operator-(const Fixed& beFixed) const
 {
 	Fixed	ret = *this;
 	int a = fixValue;
@@ -84,7 +84,7 @@ Fixed	Fixed::operator-(Fixed const &beFixed) const
 	return (ret);
 }
 
-Fixed	Fixed::operator*(Fixed const &beFixed) const
+Fixed	Fixed::operator*(const Fixed& beFixed) const
 {
 	Fixed	ret = *this;
 	int a = fixValue;
@@ -93,7 +93,7 @@ Fixed	Fixed::operator*(Fixed const &beFixed) const
 	return (ret);
 }
 
-Fixed	Fixed::operator/(Fixed const &beFixed) const
+Fixed	Fixed::operator/(const Fixed& beFixed) const
 {
 	Fixed	ret = *this;
 	int a = fixValue;
@@ -102,42 +102,42 @@ Fixed	Fixed::operator/(Fixed const &beFixed) const
 	return (ret);
 }
 
-bool	Fixed::operator>(Fixed const &beFixed) const
+bool	Fixed::operator>(const Fixed& beFixed) const
 {
 	if (this->fixValue > beFixed.fixValue)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator<(Fixed const &beFixed) const
+bool	Fixed::operator<(const Fixed& beFixed) const
 {
 	if (this->fixValue < beFixed.fixValue)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator>=(Fixed const &beFixed) const
+bool	Fixed::operator>=(const Fixed& beFixed) const
 {
 	if (this->fixValue >= beFixed.fixValue)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator<=(Fixed const &beFixed) const
+bool	Fixed::operator<=(const Fixed& beFixed) const
 {
 	if (this->fixValue <= beFixed.fixValue)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator==(Fixed const &beFixed) const
+bool	Fixed::operator==(const Fixed& beFixed) const
 {
 	if (this->fixValue == beFixed.fixValue)
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator!=(Fixed const &beFixed) const
+bool	Fixed::operator!=(const Fixed& beFixed) const
 {
 	if (this->fixValue != beFixed.fixValue)
 		return (true);

@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:15:45 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/14 04:08:59 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/14 04:18:34 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ class Fixed {
 	Fixed(const int r);
 	Fixed(const float f);
 	~Fixed();
-	Fixed&	operator=(Fixed const &beFixed);
-	Fixed	operator*(Fixed const &beFixed) const;
-	Fixed	operator+(Fixed const &beFixed) const;
-	Fixed	operator-(Fixed const &beFixed) const;
-	Fixed	operator/(Fixed const &beFixed) const;
-	bool	operator>(Fixed const &beFixed) const;
-	bool	operator<(Fixed const &beFixed) const;
-	bool	operator>=(Fixed const &beFixed) const;
-	bool	operator<=(Fixed const &beFixed) const;
-	bool	operator==(Fixed const &beFixed) const;
-	bool	operator!=(Fixed const &beFixed) const;
+	Fixed&	operator=(const Fixed& beFixed);
+	Fixed	operator*(const Fixed& beFixed) const;
+	Fixed	operator+(const Fixed& beFixed) const;
+	Fixed	operator-(const Fixed& beFixed) const;
+	Fixed	operator/(const Fixed& beFixed) const;
+	bool	operator>(const Fixed& beFixed) const;
+	bool	operator<(const Fixed& beFixed) const;
+	bool	operator>=(const Fixed& beFixed) const;
+	bool	operator<=(const Fixed& beFixed) const;
+	bool	operator==(const Fixed& beFixed) const;
+	bool	operator!=(const Fixed& beFixed) const;
 	Fixed	operator++(int);
 	Fixed&	operator++();
 	Fixed	operator--(int);
