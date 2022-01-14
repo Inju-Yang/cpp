@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:09:27 by inyang            #+#    #+#             */
-/*   Updated: 2021/12/15 17:27:03 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/14 18:33:34 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ Zombie::~Zombie(void)
 void	Zombie::setName(std::string name)
 {
 	this->name = name;
+	announce();
 }

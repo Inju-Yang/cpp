@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:28:48 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/10 01:03:08 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/14 19:21:22 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	main(int ac, char **av)
 		std::cout << "Error: Count arguments again" << std::endl;
 		return (1);
 	}
-	std::string 	filename = av[1];
-	std::string 	s1 = av[2];
-	std::string 	s2 = av[3];
+	const std::string 	filename = av[1];
+	const std::string 	s1 = av[2];
+	const std::string 	s2 = av[3];
 	if (filename.length() == 0 || s1.length() == 0 || s2.length() == 0)
 	{
 		std::cout << "Error: Blank arguments are prohibited" << std::endl;
@@ -32,7 +32,6 @@ int	main(int ac, char **av)
 
 	std::ifstream	infile;
 	std::ofstream	outfile;
-	std::string		line;
 
 	infile.open(filename);
 	if (!infile.is_open())
@@ -47,6 +46,7 @@ int	main(int ac, char **av)
 		return (1);
 	}
 
+	std::string		line;
 	while (std::getline(infile, line))
 	{
 		int index = 0;

@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:28:48 by inyang            #+#    #+#             */
-/*   Updated: 2021/12/15 18:01:18 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/14 18:34:28 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	main(void)
 {
 	Zombie *zz = zombieHorde(13, "Tom");
-	zz[0].announce();
 	delete [] zz;
+	return (0);
 }
