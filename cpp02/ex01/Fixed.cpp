@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 02:12:34 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/14 03:24:21 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/17 02:18:51 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,15 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->fixValue / (1 << this->fracBits));
+	float	f = (float)this->fixValue;
+	f = f / (float)(1 << this->fracBits);
+	return (f);
 }
 
 int		Fixed::toInt(void) const
 {
-	return (this->fixValue >> this->fracBits);
+	float	i = this->toFloat();
+	return ((int)roundf(i));
 }
 
 Fixed::Fixed()
@@ -61,7 +64,7 @@ Fixed::Fixed(const int r)
 Fixed::Fixed(const float f)
 {
 	std::cout << "Float constructor called\n";
-	this->setRawBits(roundf(f * (1 << this->fracBits)));
+	fixValue = (int)roundf(f * (float)(1 << fracBits));
 }
 
 Fixed::~Fixed() 

@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:15:47 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/14 04:18:10 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/17 03:57:53 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,15 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->fixValue / (1 << this->fracBits));
+	float	f = (float)this->fixValue;
+	f = f / (float)(1 << this->fracBits);
+	return (f);
 }
 
 int		Fixed::toInt(void) const
 {
-	return (this->fixValue >> this->fracBits);
+	float	i = this->toFloat();
+	return ((int)roundf(i));
 }
 
 Fixed::Fixed()
@@ -68,38 +71,22 @@ std::ostream&	operator<<(std::ostream& out, const Fixed& fixed)
 
 Fixed	Fixed::operator+(const Fixed& beFixed) const
 {
-	Fixed	ret = *this;
-	int a = fixValue;
-	int b = beFixed.getRawBits();
-	ret.setRawBits(a + b);
-	return (ret);
+	return (this->toFloat() + beFixed.toFloat());
 }
 
 Fixed	Fixed::operator-(const Fixed& beFixed) const
 {
-	Fixed	ret = *this;
-	int a = fixValue;
-	int b = beFixed.getRawBits();
-	ret.setRawBits(a - b);
-	return (ret);
+	return (this->toFloat() - beFixed.toFloat());
 }
 
 Fixed	Fixed::operator*(const Fixed& beFixed) const
 {
-	Fixed	ret = *this;
-	int a = fixValue;
-	int b = beFixed.getRawBits();
-	ret.setRawBits(a * b / (1 << fracBits));
-	return (ret);
+	return (this->toFloat() * beFixed.toFloat());
 }
 
 Fixed	Fixed::operator/(const Fixed& beFixed) const
 {
-	Fixed	ret = *this;
-	int a = fixValue;
-	int b = beFixed.getRawBits();
-	ret.setRawBits((a / b) * (1 << fracBits));
-	return (ret);
+	return (this->toFloat() / beFixed.toFloat());
 }
 
 bool	Fixed::operator>(const Fixed& beFixed) const
@@ -146,7 +133,7 @@ bool	Fixed::operator!=(const Fixed& beFixed) const
 
 Fixed	Fixed::operator++(int)
 {
-	Fixed	a(*this);
+	Fixed	a = *this;
 
 	this->fixValue++;
 	return (a);

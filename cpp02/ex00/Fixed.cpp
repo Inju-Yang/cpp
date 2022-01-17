@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 00:01:20 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/13 00:10:41 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/16 06:24:00 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called\n";
+	fixValue = 0;
 }
 
 Fixed::Fixed(const Fixed& fixed)
@@ -26,7 +27,7 @@ Fixed::Fixed(const Fixed& fixed)
 Fixed& Fixed::operator=(const Fixed& fixed)
 {
 	std::cout << "Assignation operator called\n";
-	this->setRawBits(fixed.getRawBits());
+	setRawBits(fixed.getRawBits());
 	return (*this);
 }
 
