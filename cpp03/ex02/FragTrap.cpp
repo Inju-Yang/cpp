@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 01:02:48 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/16 04:13:43 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/18 06:41:03 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ FragTrap::~FragTrap()
 
 void	FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap [ " << name << " ] wants to high five.\n";
+	std::cout << "*** FragTrap [ " << name << " ] wants to high five.\n";
 }

@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 04:36:01 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/16 04:04:03 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/18 06:37:08 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
+	std::cout << "* Now " << name << " >>>>>>>> HP : " << this->hitPoints << " EP : " << this->energyPoints << " AD : " << this->attackDamage << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
@@ -42,6 +43,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& copy)
 	this->hitPoints = copy.hitPoints;
 	this->energyPoints = copy.energyPoints;
 	this->attackDamage = copy.attackDamage;
+	std::cout << "* Now " << name << " >>>>>>>> HP : " << this->hitPoints << " EP : " << this->energyPoints << " AD : " << this->attackDamage << std::endl;
 	return (*this);
 }
 

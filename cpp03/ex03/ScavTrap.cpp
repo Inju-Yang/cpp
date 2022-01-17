@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 05:21:59 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/17 15:06:34 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/18 06:42:20 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(std::string const & target)
 {
-	std::cout << "ScavTrap attacks [ " << target << " ]\n";
+	std::cout << "*** ScavTrap attacks [ " << target << " ]\n";
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap [ " << name << " ] has enterred in Gate keeper mode.\n";
+	std::cout << "*** ScavTrap [ " << name << " ] has enterred in Gate keeper mode.\n";
 }

@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 05:21:59 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/16 05:31:09 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/18 06:41:11 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap [ " << name << " ] has enterred in Gate keeper mode.\n";
+	std::cout << "*** ScavTrap [ " << name << " ] has enterred in Gate keeper mode.\n";
 }
