@@ -6,31 +6,29 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:38:10 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/21 01:41:33 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/21 01:59:55 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main ()
 {
-	Bureaucrat bu = Bureaucrat("highest", 0);
-	Bureaucrat b = Bureaucrat("lowest", 153);
+	Bureaucrat	smiley("Smiley", 151);
+	Form		form("Form", 149, 1);
 
-	std::cout << bu;
-	bu.goHigher();
-	std::cout << bu;
-	bu.goLower();
-	std::cout << bu;
-
-	std::cout << "\n---------- lower test ----------\n";
-	std::cout << b;
-	b.goHigher();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-
+	std::cout << "-------------- check status ------------\n";
+	std::cout << smiley;
+	std::cout << form << std::endl;
+	std::cout << "-------------- is signed? ------------\n\n";
+	form.beSigned(smiley);
+	smiley.signForm(form);
+	smiley.goHigher();
+	form.beSigned(smiley);
+	smiley.signForm(form);
+	std::cout << "\n-------------- check status ------------\n\n";
+	std::cout << smiley;
+	std::cout << form << std::endl;
+	
 	return (0);
 }

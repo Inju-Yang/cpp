@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:38:08 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/20 21:00:52 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/21 01:39:57 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ class Bureaucrat
 		void	goHigher();
 		void	goLower();
 
-		class GradeTooHighException : std::exception
+		class GradeTooHighException : public std::exception
 		{
 			public:
 				const char* what() const throw() {
-					return "Too higher grade => Auto generated grade is [ 1 ]\n"; };
+					return "Too high grade"; };
 		};
-		class GradeTooLowException : std::exception
+		class GradeTooLowException : public std::exception
 		{
 			public:
 				const char* what() const throw() {
-					return "Too lower grade => Auto generated grade is [ 150 ]\n";};
+					return "Too low grade";};
 		};
 };
 

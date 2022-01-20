@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:38:05 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/21 01:40:30 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/21 01:39:44 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,14 @@ void	Bureaucrat::goLower()
 		std::cout << e.what() << " => Auto generated grade is [ 150 ]\n";
 		this->grade = 150;
 	}
+}
+
+void	Bureaucrat::signForm(Form& form)
+{
+	if (form.getIsSigned() == true)
+		std::cout << "< " << name << " > signs < " << form.getName() << " >\n";
+	else
+		std::cout << "< " << name << " > cannot sign < " << form.getName() << " >  because < Grade is low >\n";
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& obj)
