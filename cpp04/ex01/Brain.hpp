@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 00:38:10 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/20 21:18:42 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/19 23:33:30 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/20 06:08:51 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int main ()
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
+class Brain
 {
-	Bureaucrat bu = Bureaucrat("highest", 0);
-	Bureaucrat b = Bureaucrat("lowest", 153);
+	private:
+		std::string	ideas[100];
+	public:
+		Brain();
+		Brain(const Brain& copy);
+		Brain& operator=(const Brain& copy);
+		~Brain();
+		std::string	getIdea(int index);
+		void	setIdea();
+};
 
-	std::cout << bu;
-	bu.goHigher();
-	std::cout << bu;
-	bu.goLower();
-	std::cout << bu;
-
-	std::cout << b;
-	b.goHigher();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-
-	return (0);
-}
+#endif

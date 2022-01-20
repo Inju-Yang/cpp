@@ -1,93 +1,97 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/20 00:38:05 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/20 21:21:16 by inyang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("cheolsoo")
+Bureaucrat::Bureaucrat(){}
+	
+Bureaucrat::Bureaucrat(const std::string Name, int Grade) : name(Name)
 {
-    grade = 150;
-    std::cout << "Create Bureaucrat!" << std::endl;
+	try{
+		if (Grade < 1)
+			throw GradeTooHighException();
+	}
+	catch (GradeTooHighException& e)
+	{
+		std::cout << e.what();
+		Grade = 1;
+	}
+	try 
+	{
+		if (Grade > 150)
+			throw GradeTooLowException();
+	}
+	catch (GradeTooLowException& e)
+	{
+		std::cout << e.what();
+		Grade = 150;
+	}
+	grade = Grade;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, const int grade) : name(name)
+Bureaucrat::Bureaucrat(const Bureaucrat& obj)
 {
-    if (grade < 1)
-        throw GradeTooHighException;
-    else if (grade > 150)
-        throw GradeTooLowException;
-    this->grade = grade;
-    std::cout << "Create Bureaucrat!" << std::endl;
+	*this = obj;
 }
-
-Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.name)
+		
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& obj)
 {
-    std::cout << "Create Bureaucrat!" << std::endl;
-    *this = src;
+	this->grade = obj.grade;
+	return (*this);
 }
-
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src)
-{
-    if (this != &src)
-        grade = src.getGrade();
-    return (*this);
-}
-
-std::ostream& operator<<(std::ostream& os, const Bureaucrat &src)
-{
-    os << "<" << src.getName() << ">, bureaucrat grade <" << src.getGrade() << ">" << std::endl;
-    return (os);
-}
-
-Bureaucrat::~Bureaucrat()
-{
-    std::cout << "Delete Bureaucrat!" << std::endl;
-}
-
-int Bureaucrat::getGrade() const
-{
-    return (grade);
-}
+		
+Bureaucrat::~Bureaucrat(){}
 
 std::string Bureaucrat::getName() const
 {
-    return (name);
+	return (this->name);
 }
 
-void Bureaucrat::promotion()
+int			Bureaucrat::getGrade() const
 {
-    if (grade - 1 < 1)
-        throw GradeTooHighException;
-    grade--;
-    std::cout << *this;
+	return (this->grade);
 }
 
-void Bureaucrat::promotion(int changetheworld)
+void	Bureaucrat::goHigher()
 {
-    if (grade - changetheworld < 1)
-        throw GradeTooHighException;
-    grade -= changetheworld;
-    std::cout << *this ;
+	this->grade--;
+	try
+	{
+		if (this->grade < 1)
+			throw(GradeTooHighException());
+	}
+	catch(GradeTooHighException& e)
+	{
+		std::cout << e.what();
+		this->grade = 1;
+	}
+}
+void	Bureaucrat::goLower()
+{
+	this->grade++;
+	try
+	{
+		if (this->grade > 150)
+			throw(GradeTooLowException());
+	}
+	catch(GradeTooLowException& e)
+	{
+		std::cout << e.what();
+		this->grade = 150;
+	}
 }
 
-void Bureaucrat::demotion()
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& obj)
 {
-    if (grade + 1 > 150)
-        throw GradeTooLowException;
-    grade++;
-    std::cout << *this ;
-}
-
-void Bureaucrat::demotion(int changetheworld)
-{
-    if (grade + changetheworld > 150)
-        throw GradeTooLowException;
-    grade += changetheworld;
-    std::cout << *this ;
-}
-
-const char *HighException::what() const throw()
-{
-    return ("The grade is too high");
-}
-
-const char *LowException::what() const throw()
-{
-    return("The grade is too low");
+	out << "< " << obj.getName() << " >, bureaucrat grade < " << obj.getGrade() << " >\n";
+	return (out);
 }

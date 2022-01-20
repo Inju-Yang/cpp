@@ -1,4 +1,4 @@
-NAME			=	bureaucrat
+NAME			=	abstract
 CC				=	c++
 CFLAGS			=	-Wall -Wextra -Werror
 AR				=	ar
@@ -6,7 +6,10 @@ ARFLAGS			=	rcs
 RM				=	rm -f
 
 SRCS			=	main.cpp\
-					Bureaucrat.cpp
+					Cat.cpp\
+					Dog.cpp\
+					Animal.cpp\
+					Brain.cpp\
 					
 OBJS			=	$(SRCS:.cpp=.o)
 

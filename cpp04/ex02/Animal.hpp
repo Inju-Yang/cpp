@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 00:38:10 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/20 21:18:42 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/18 06:48:28 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/20 06:26:37 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main ()
+# include <iostream>
+# include <string>
+
+class Animal
 {
-	Bureaucrat bu = Bureaucrat("highest", 0);
-	Bureaucrat b = Bureaucrat("lowest", 153);
+	protected:
+		std::string type;
+	public:
+		Animal();
+		Animal(const Animal& copy);
+		Animal& operator=(const Animal& copy);
+		virtual ~Animal();
+		std::string		getType(void) const;
+		virtual void	makeSound(void) const = 0;
+};
 
-	std::cout << bu;
-	bu.goHigher();
-	std::cout << bu;
-	bu.goLower();
-	std::cout << bu;
-
-	std::cout << b;
-	b.goHigher();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-
-	return (0);
-}
+#endif

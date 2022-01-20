@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 05:21:59 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/18 06:42:20 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/18 07:21:47 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& copy)
 	std::cout << "*** ScavTrap Assignaton Operator ***\n";
 	ClapTrap::operator=(copy);
 	return *this;
-
 }
 
 ScavTrap::~ScavTrap()
