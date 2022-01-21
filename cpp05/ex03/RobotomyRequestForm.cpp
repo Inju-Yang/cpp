@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 02:11:16 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/21 15:49:14 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/21 22:38:50 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		if (this->execGrade < executor.getGrade())
 		{
 			std::cout << "Signed but can't execute -> ";
-			throw Form::GradeTooHighException();
+			throw Form::GradeTooLowException();
 		}
 		else
 		{
@@ -58,5 +58,6 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	else
 	{
 		std::cout << "Robotomized failure\n";
+		throw Form::NoSignedForm();
 	}
 }

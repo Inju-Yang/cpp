@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 02:11:22 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/21 15:49:03 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/21 22:37:57 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		if (this->execGrade < executor.getGrade())
 		{
 			std::cout << "Signed but can't execute -> ";
-			throw Form::GradeTooHighException();
+			throw Form::GradeTooLowException();
 		}
 		else
 		{
@@ -67,6 +67,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	}
 	else
 	{
-		std::cout << "Go back and get signed\n";
+		std::cout << "No Shrubbery Creation\n";
+		throw Form::NoSignedForm();
 	}
 }

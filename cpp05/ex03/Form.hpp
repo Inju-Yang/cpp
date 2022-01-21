@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:39:25 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/21 03:22:18 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/21 22:31:02 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ class Form
 			public:
 				virtual const char* what() const throw() {
 					return "[Form] Too low grade";};
+		};
+		class NoSignedForm : public std::exception
+		{
+			public:
+				virtual const char* what() const throw() {
+					return "Go back and get sign!";};
 		};
 };
 std::ostream& operator<<(std::ostream& out, const Form& obj);

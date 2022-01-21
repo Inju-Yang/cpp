@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 02:11:11 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/21 21:49:18 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/21 22:37:48 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 		if (this->execGrade < executor.getGrade())
 		{
 			std::cout << "Signed but can't execute -> ";
-			throw Form::GradeTooHighException();
+			throw Form::GradeTooLowException();
 		}
 		else
 		{
@@ -57,5 +57,6 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	else
 	{
 		std::cout << "President says No\n";
+		throw Form::NoSignedForm();
 	}
 }
