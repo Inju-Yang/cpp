@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:38:10 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/21 22:36:15 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/22 16:25:03 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main ()
 {
-	Bureaucrat	smiley("Smiley", 50);
+	Bureaucrat	smiley("Smiley", 15);
 	ShrubberyCreationForm	sh("home");
 	RobotomyRequestForm		ro("robot");
 	PresidentialPardonForm	pr("mint-chocolate");
