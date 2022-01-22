@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 06:29:00 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/20 06:41:23 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/22 15:17:16 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
 
 	std::cout << "\n---------- Welcome NEW Animals ---------\n\n";
 		Dog dog;
-		Cat cat;
+		Cat cat;	
 
 		dog.makeSound();
 		cat.makeSound();

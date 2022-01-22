@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 02:11:16 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/21 22:38:50 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/22 16:15:46 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		else
 		{
 			std::cout << "* Drrrrrrrrr... Drrrrrrrrrrrrrr....... *\n";
-			std::cout << "< " << target << " > has been robotomized successfully 50% of the time\n";
+			if (std::rand() % 2 == 0)
+				std::cout << "< " << getTarget() << " > has been robotomized successfully" << std::endl;
+			else
+				std::cout << "< " << getTarget() << " > has not been robotomized successfully" << std::endl;
 		}
 	}
 	else
