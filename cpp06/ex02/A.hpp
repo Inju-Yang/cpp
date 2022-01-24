@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 00:38:10 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/22 17:24:37 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/24 17:00:08 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/24 18:00:23 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef A_HPP
+# define A_HPP
 
-int main ()
-{
-	Bureaucrat bu = Bureaucrat("highest", 0);
-	Bureaucrat b = Bureaucrat("lowest", 150);
+#include "Base.hpp"
 
-	std::cout << bu;
-	bu.goHigher();
-	std::cout << bu;
-	bu.goLower();
-	std::cout << bu;
+class A : public Base
+{};
 
-	std::cout << "\n---------- lower test ----------\n";
-	std::cout << b;
-	b.goHigher();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-
-	return (0);
-}
+#endif

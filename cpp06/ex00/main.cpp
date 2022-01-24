@@ -5,32 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 00:38:10 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/22 17:24:37 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/22 23:05:41 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/24 15:48:49 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Conversion.hpp"
 
-int main ()
+int	main(int ac, char **av)
 {
-	Bureaucrat bu = Bureaucrat("highest", 0);
-	Bureaucrat b = Bureaucrat("lowest", 150);
-
-	std::cout << bu;
-	bu.goHigher();
-	std::cout << bu;
-	bu.goLower();
-	std::cout << bu;
-
-	std::cout << "\n---------- lower test ----------\n";
-	std::cout << b;
-	b.goHigher();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-
+	if (ac != 2)
+	{
+		std::cout << "Needs one argument\n";
+		return (0);
+	}
+	Conversion convert(av[1]);
+	convert.convertType();
 	return (0);
 }

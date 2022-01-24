@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   identify.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 00:38:10 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/22 17:24:37 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/24 17:24:36 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/24 17:27:46 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef IDENTIFY_HPP
+# define IDENTIFY_HPP
 
-int main ()
-{
-	Bureaucrat bu = Bureaucrat("highest", 0);
-	Bureaucrat b = Bureaucrat("lowest", 150);
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include <iostream>
+#include <ctime>
+#include <exception>
 
-	std::cout << bu;
-	bu.goHigher();
-	std::cout << bu;
-	bu.goLower();
-	std::cout << bu;
+Base*	generate();
+void	identify(Base* p);
+void	identify(Base& p);
 
-	std::cout << "\n---------- lower test ----------\n";
-	std::cout << b;
-	b.goHigher();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-
-	return (0);
-}
+#endif

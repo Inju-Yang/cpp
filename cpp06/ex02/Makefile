@@ -1,4 +1,4 @@
-NAME			=	convert
+NAME			=	identify
 CC				=	c++
 CFLAGS			=	-Wall -Wextra -Werror
 AR				=	ar
@@ -6,7 +6,8 @@ ARFLAGS			=	rcs
 RM				=	rm -f
 
 SRCS			=	main.cpp\
-					Conversion.cpp
+					Base.cpp\
+					identify.cpp
 					
 OBJS			=	$(SRCS:.cpp=.o)
 

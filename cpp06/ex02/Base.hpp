@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 00:38:10 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/22 17:24:37 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/24 16:38:27 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/24 17:59:55 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef	BASE_HPP
+# define BASE_HPP
 
-int main ()
+#include <iostream>
+
+class Base
 {
-	Bureaucrat bu = Bureaucrat("highest", 0);
-	Bureaucrat b = Bureaucrat("lowest", 150);
+	public:
+		virtual ~Base();
+};
 
-	std::cout << bu;
-	bu.goHigher();
-	std::cout << bu;
-	bu.goLower();
-	std::cout << bu;
-
-	std::cout << "\n---------- lower test ----------\n";
-	std::cout << b;
-	b.goHigher();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-
-	return (0);
-}
+#endif

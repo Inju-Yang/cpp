@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 00:38:10 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/22 17:24:37 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/22 23:20:58 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/24 07:26:39 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef	DATA_HPP
+# define DATA_HPP
 
-int main ()
+#include <iostream>
+
+typedef	struct	Data 
 {
-	Bureaucrat bu = Bureaucrat("highest", 0);
-	Bureaucrat b = Bureaucrat("lowest", 150);
+	int			i;
+	char		c;
+	std::string	s;
+}	Data;
+uintptr_t	serialize(Data* ptr);
+Data* 		deserialize(uintptr_t raw);
 
-	std::cout << bu;
-	bu.goHigher();
-	std::cout << bu;
-	bu.goLower();
-	std::cout << bu;
-
-	std::cout << "\n---------- lower test ----------\n";
-	std::cout << b;
-	b.goHigher();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-	b.goLower();
-	std::cout << b;
-
-	return (0);
-}
+#endif

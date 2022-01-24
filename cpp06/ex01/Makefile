@@ -1,4 +1,4 @@
-NAME			=	intern
+NAME			=	serialize
 CC				=	c++
 CFLAGS			=	-Wall -Wextra -Werror
 AR				=	ar
@@ -6,12 +6,7 @@ ARFLAGS			=	rcs
 RM				=	rm -f
 
 SRCS			=	main.cpp\
-					Bureaucrat.cpp\
-					Form.cpp\
-					ShrubberyCreationForm.cpp\
-					RobotomyRequestForm.cpp\
-					PresidentialPardonForm.cpp\
-					Intern.cpp
+					Data.cpp
 					
 OBJS			=	$(SRCS:.cpp=.o)
 
