@@ -6,30 +6,30 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 23:21:06 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/24 07:31:19 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/24 18:15:33 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
-int main()
+int		main(void)
 {
-    Data data;
-    uintptr_t	serializeValue;
-    Data 		*deserializeValue;
+	Data* ptr = new Data;
+	ptr->s = "Serialize test";
+	ptr->i = 42;
+	ptr->c = '*';
 
-    data.s = "hi";
-    data.i = 9;
-    data.c = 'a';
-
-    serializeValue = serialize(&data);
-    std::cout << "intptr		: " << serializeValue << std::endl;
-    std::cout << "intptr hex	: " << std::hex << serializeValue << std::endl;
-
-    deserializeValue = deserialize(serializeValue);
-    std::cout << "str	: " << deserializeValue->s << std::endl;
-    std::cout << "int	: " << deserializeValue->i << std::endl;
-    std::cout << "char	: " << deserializeValue->c << std::endl;
-
-    return (0);
+	std::cout << "ptr address	: " << ptr << std::endl;
+	std::cout << "str data	: " << ptr->s << std::endl;
+	std::cout << "int data	: " << ptr->i << std::endl;
+	std::cout << "char data	: " << ptr->c << std::endl;
+	
+	uintptr_t	raw = serialize(ptr);
+	std::cout << "serialized ptr address	: " << raw << std::endl;
+	Data*	new_ptr = deserialize(raw);
+	std::cout << "deserialized ptr address: " << new_ptr << std::endl;
+	std::cout << "deserialized str data	: " << ptr->s << std::endl;
+	std::cout << "deserialized int data	: " << ptr->i << std::endl;
+	std::cout << "deserialized char data	: " << ptr->c << std::endl;
+	delete ptr;
 }
