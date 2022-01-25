@@ -5,17 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 17:14:39 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/24 23:05:28 by inyang           ###   ########.fr       */
+/*   Created: 2022/01/24 23:21:14 by inyang            #+#    #+#             */
+/*   Updated: 2022/01/26 05:06:57 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "identify.hpp"
 
-int main (void)
+#include "whatever.hpp"
+
+int main(void)
 {
-	Base* base = generate();
-	identify(base);
-	identify(*base);
-	return (0);
+	int a = 2;
+	int b = 3;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 }
