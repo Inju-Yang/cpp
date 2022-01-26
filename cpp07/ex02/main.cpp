@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 23:49:58 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/26 06:37:36 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/26 14:48:24 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main(int, char**)
     {
         std::cerr << e.what() << '\n';
     }
-	std::cout << "\n** Array < numbers > value reset\n";
+	std::cout << "\n** Array < numbers > value reset\n"; //numbers mirror tmp test
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
