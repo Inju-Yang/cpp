@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 08:56:26 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/27 15:41:20 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/27 18:24:42 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ unsigned int		Span::shortestSpan()
 		throw(std::length_error("Not enough elements to compare"));
 	std::vector<int> tmp = this->vec;
 	std::sort(tmp.begin(), tmp.end());
-	unsigned int min = tmp.back() - tmp.front();
+	int min = tmp.back() - tmp.front();
 	std::vector<int>::iterator here = tmp.begin();
 	std::vector<int>::iterator next = here + 1;
 	while (next != tmp.end())

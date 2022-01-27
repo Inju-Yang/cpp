@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:29:55 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/27 18:13:39 by inyang           ###   ########.fr       */
+/*   Updated: 2022/01/27 18:29:37 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,18 +79,6 @@ int main()
 		std::cout << *rit << std::endl;
 		++rit;
 	}
-
-	std::cout << "\n>> MutantStack copy to stack<int> s <<\n";
-	std::stack<int> s(mstack);
-	std::cout << "2 pop & 1 push (42)\n";
-	s.pop();
-	s.pop();
-	s.push(42);
-	std::cout << "\n>> MutantStack vs copied stack << \n";
-	std::cout << "stack s top : " << s.top() << std::endl;
-	std::cout << "stack s size : " << s.size() << std::endl;
-	std::cout << "MutantStack mstack top : " << mstack.top() << std::endl;
-	std::cout << "MutantStack mstack size : " << mstack.size() << std::endl;
 
 	return 0;
 }
