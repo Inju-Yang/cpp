@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:29:40 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/27 16:57:51 by inyang           ###   ########.fr       */
+/*   Updated: 2022/06/25 17:30:11 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	Span sp = Span(5);
-	sp.addNumber(5);
+	sp.addNumber(10);
 	sp.addNumber(3);
 	sp.addNumber(17);
 	sp.addNumber(9);
