@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:33:56 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/27 18:02:20 by inyang           ###   ########.fr       */
+/*   Updated: 2022/06/26 18:28:38 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
 	public:
-		MutantStack() : std::stack<T>() {}
-		MutantStack(const MutantStack<T>& obj) : std::stack<T>(obj) {}
-		MutantStack<T>& operator=(const MutantStack<T>& obj) {*this = obj; return *this;}
-		virtual ~MutantStack() {}
+		MutantStack();
+		MutantStack(const MutantStack<T>& obj);
+		MutantStack<T>& operator=(const MutantStack<T>& obj);
+		virtual ~MutantStack();
 		typedef typename std::stack<T>::container_type::iterator	iterator;
 		iterator begin();
 		iterator end();

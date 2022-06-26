@@ -6,11 +6,23 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:34:32 by inyang            #+#    #+#             */
-/*   Updated: 2022/01/27 18:01:51 by inyang           ###   ########.fr       */
+/*   Updated: 2022/06/26 18:32:08 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mutantstack.hpp"
+
+template <typename T>
+MutantStack<T>::MutantStack(): std::stack<T>() {}
+
+template <typename T>
+MutantStack<T>::MutantStack(const MutantStack<T>& obj): std::stack<T>(obj) {}
+
+template <typename T>
+MutantStack<T>& MutantStack<T>::operator=(const MutantStack<T>& obj) {*this = obj; return *this;}
+
+template <typename T>
+MutantStack<T>::~MutantStack() {}
 
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin() 
